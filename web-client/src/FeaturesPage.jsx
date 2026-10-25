@@ -49,7 +49,7 @@ function FeaturesPage({ onNavigate, theme, onToggleTheme }) {
   return (
     <div className="features-page-container">
       {/* Navbar */}
-      <nav className="features-nav">
+      <nav className="landing-nav">
         <div className="logo-container">
          <button type="button" className="auth-back-btn" onClick={() => onNavigate && onNavigate('home')}>
                    <img
@@ -60,7 +60,7 @@ function FeaturesPage({ onNavigate, theme, onToggleTheme }) {
                    <span className="logo-text">SyncLearn</span>
                  </button> 
         </div>
-        <div style={{ display: 'flex', gap: '0.8rem', alignItems: 'center' }}>
+        <div className="logo-container">
           <button className="back-btn" onClick={() => onNavigate && onNavigate('home')}>
             ← Back to Home
           </button>

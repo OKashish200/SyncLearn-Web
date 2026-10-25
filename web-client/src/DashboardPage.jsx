@@ -1366,7 +1366,7 @@ const handleCreateRoom = async () => {
 
       {/* Top Header Navigation */}
       <nav className="landing-nav">
-        <div className="logo-container" style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'nowrap' }}>
+        <div className="logo-container">
           <button type="button" className="auth-back-btn" onClick={() => onNavigate && onNavigate('home')}>
             <img
               src={logoImg}
@@ -1380,7 +1380,7 @@ const handleCreateRoom = async () => {
           </span>
         </div>
 
-        <div style={{ display: 'flex', gap: '0.8rem', alignItems: 'center' }}>
+        <div className="nav-links">
           {/* {isInstructor && (
             <button type="button" className="back-btn" onClick={handleAnalytics} style={{ backgroundColor: '#334155', color: '#ffffff' }}>
               📊 Analytics

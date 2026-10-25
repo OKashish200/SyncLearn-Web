@@ -3494,17 +3494,7 @@ function ActiveRoomPage({
 
       {/* ── Header ── */}
       <header className="room-header">
-        <div className="room-info">
-          {/* Mobile Menu Toggle Button */}
-          <button
-            type="button"
-            className="mobile-sidebar-toggle-btn"
-            onClick={() => setIsSidebarCollapsed(prev => !prev)}
-            title="Toggle Classroom Tools Menu"
-            aria-label="Toggle Classroom Tools"
-          >
-            ☰
-          </button>
+        <div className="room-info"> 
 
           <h2 className="room-header-title">
             <img src="/logo.png" alt="SyncLearn" className="room-header-logo" />
@@ -3539,7 +3529,17 @@ function ActiveRoomPage({
           )}
         </div>
 
-        <div style={{ display: 'flex', gap: '0.65rem', alignItems: 'center' }}>
+        <div className='nav-links'> 
+          {/* Mobile Menu Toggle Button */}
+          <button
+            type="button"
+            className="mobile-sidebar-toggle-btn"
+            onClick={() => setIsSidebarCollapsed(prev => !prev)}
+            title="Toggle Classroom Tools Menu"
+            aria-label="Toggle Classroom Tools"
+          >
+            ☰
+          </button>
           <button
             type="button"
             className="theme-icon-btn"

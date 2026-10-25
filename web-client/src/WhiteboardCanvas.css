@@ -25,6 +25,7 @@
   overflow: visible;
   max-width: calc(100% - 16px);
   padding-bottom: 2px;
+  flex-wrap: wrap;
 }
 
 .wb-top-container::-webkit-scrollbar {
@@ -1277,7 +1278,7 @@
   }
 
   /* Mobile Floating Toolbar Container */
-  .wb-top-container {
+  /* .wb-top-container {
     left: 6px !important;
     right: 6px !important;
     top: 6px !important;
@@ -1289,7 +1290,7 @@
     pointer-events: auto !important;
     z-index: 1000 !important;
     gap: 6px !important;
-  }
+  } */
 
   .wb-top-left-group {
     display: flex !important;

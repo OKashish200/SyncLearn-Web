@@ -18,7 +18,7 @@
 }
 
 /* ── Header ── */
-.room-header {
+/* .room-header {
   height: 58px;
   min-height: 58px;
   background: rgba(240, 253, 254, 0.92);
@@ -31,7 +31,7 @@
   align-items: center;
   padding: 0 1.25rem;
   z-index: 50;
-}
+} */
 
 [data-theme="dark"] .room-header,
 .dark-theme .room-header {
@@ -4667,7 +4667,7 @@
   }
 
   /* ── 2. Top Header ── */
-  .room-header {
+  /* .room-header {
     height: 48px !important;
     min-height: 48px !important;
     padding: 0 8px !important;
@@ -4680,7 +4680,7 @@
     box-sizing: border-box !important;
     z-index: 50 !important;
     gap: 4px !important;
-  }
+  } */
 
   .mobile-sidebar-toggle-btn {
     display: inline-flex !important;
@@ -4703,11 +4703,9 @@
   }
 
   .room-info {
-    display: flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-    min-width: 0 !important;
-    overflow: hidden !important;
+   flex-wrap: wrap;
+   gap: 3px;
+   margin-bottom: 8px;
   }
 
   .room-header-title {
@@ -5088,11 +5086,11 @@
 
   /* ── 12. Compact Phones (<= 480px, e.g. iPhone SE, Galaxy A-series) ── */
   @media (max-width: 480px) {
-    .room-header {
+    /* .room-header {
       height: 44px !important;
       min-height: 44px !important;
       padding: 0 6px !important;
-    }
+    } */
 
     .room-header-title .room-label {
       display: none !important;
@@ -5128,8 +5126,8 @@
 
     .video-card,
     .local-video-card {
-      height: 105px !important;
-      min-height: 105px !important;
+      height: 100% !important;
+      min-height: 100% !important;
     }
 
     .canvas-area {
@@ -5147,10 +5145,10 @@
 
   /* ── 13. Mobile Landscape Mode (Phone turned sideways) ── */
   @media (max-width: 900px) and (orientation: landscape) {
-    .room-header {
+    /* .room-header {
       height: 38px !important;
       min-height: 38px !important;
-    }
+    } */
 
     .room-footer {
       height: 46px !important;

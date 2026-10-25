@@ -85,6 +85,27 @@ function PreJoinModal({
 
   const videoRef = useRef(null);
   const streamRef = useRef(null);
+  // React state is needed because changing streamRef.current does not re-render.
+  const [previewStream, setPreviewStream] = useState(null);
+
+  // Attach/re-attach the stream whenever the video element is mounted.
+  // The video element is conditionally rendered, so it is removed when videoOn=false
+  // and recreated when the user turns the camera back on.
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !previewStream || !videoOn) return;
+
+    video.srcObject = previewStream;
+    video.play().catch((err) => {
+      console.warn('Video preview playback failed:', err);
+    });
+
+    return () => {
+      if (video.srcObject === previewStream) {
+        video.srcObject = null;
+      }
+    };
+  }, [previewStream, videoOn]);
 
   // Initialize camera & mic preview
   useEffect(() => {
@@ -120,13 +141,16 @@ function PreJoinModal({
 
         if (stream && stream.getTracks().length > 0) {
           streamRef.current = stream;
-          if (videoRef.current) {
-            videoRef.current.srcObject = stream;
-          }
 
-          // Apply initial state
+          // Apply initial state to the tracks.
           stream.getAudioTracks().forEach((t) => (t.enabled = micOn));
           stream.getVideoTracks().forEach((t) => (t.enabled = videoOn));
+
+          // Trigger a render so the <video> element is mounted.
+          setPreviewStream(stream);
+        } else {
+          console.warn('No camera or microphone tracks were available for preview.');
+          setPreviewStream(null);
         }
 
         // Enumerate devices
@@ -461,7 +485,7 @@ function PreJoinModal({
           <div className="prejoin-body">
           {/* Video Preview Viewport */}
           <div className="prejoin-preview-viewport">
-            {videoOn && streamRef.current?.getVideoTracks?.().some(t => t.readyState === 'live') ? (
+            {videoOn && previewStream?.getVideoTracks?.().some((track) => track.readyState === 'live') ? (
               <video
                 ref={videoRef}
                 autoPlay

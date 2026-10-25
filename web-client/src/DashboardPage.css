@@ -427,6 +427,7 @@
   margin-bottom: 1.75rem;
   border: 1px solid;
   backdrop-filter: blur(12px);
+  flex-wrap: wrap;
 }
 
 .instructor-banner {
@@ -571,6 +572,7 @@
   backdrop-filter: blur(12px);
   transition: var(--transition);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+      flex-wrap: wrap;
 }
 
 .role-stat-card:hover {
@@ -1164,9 +1166,7 @@
 
 /* ─── Mobile Responsiveness (Smartphones & Tablets) ─── */
 @media (max-width: 768px) {
-  .dashboard-container {
-    padding: 0.75rem 1rem 3rem;
-  }
+ 
 
   .landing-nav {
     flex-direction: column;
@@ -1176,7 +1176,7 @@
   }
 
   .landing-nav .logo-container {
-    justify-content: space-between;
+    justify-content: center;
   }
 
   .role-stats-grid {

@@ -27,7 +27,7 @@
 
 .prejoin-window {
   width: 100%;
-  max-width: 680px;
+  max-width: max-content;
   max-height: 94vh;
   background: #ffffff;
   color: #1e293b;

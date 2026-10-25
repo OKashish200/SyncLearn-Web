@@ -23,7 +23,7 @@ function AboutPage({ onNavigate, theme, onToggleTheme }) {
   return (
     <div className="about-container">
       {/* Navbar */}
-      <nav className="about-nav">
+      <nav className="landing-nav">
         <div className="logo-container">
          <button type="button" className="auth-back-btn" onClick={() => onNavigate && onNavigate('home')}>
                    <img
@@ -34,7 +34,7 @@ function AboutPage({ onNavigate, theme, onToggleTheme }) {
                    <span className="logo-text">SyncLearn</span>
                  </button> 
         </div>
-        <div style={{ display: 'flex', gap: '0.8rem', alignItems: 'center' }}>
+        <div className="nav-links">
           <button className="back-btn" onClick={() => onNavigate && onNavigate('home')}>
             ← Back to Home
           </button>
